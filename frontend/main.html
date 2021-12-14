@@ -1,0 +1,31 @@
+<link href="txtstyle.css" rel="stylesheet" />
+
+<h1># HOW IT WORKS:</h1>
+
+<p>1. Copy and paste contents of "URL/JSON-Test" as JSON POST object to "URL/predict".
+<p>2. Optional params can be set:
+    
+    <p>"model":
+        "RF"    - Random Forest
+        "XGB"   - XGBoost Binary Classifier
+        "LR"    - Logistic Regression
+        "SGD"   - SGD Classifier (test)
+    
+    <p>"method":
+        "predict"
+        "predict_proba"
+        "predict_log_proba"
+        
+    <p> default parameters:
+        "model":  "RF"
+        "method": "predict"
+        
+<p>3. Features:
+    ['city', 'job', 'category', 'merchant', 'age_category', 'dur', 'dist', 'amt', 'proxim_ave', 'rate_ave']
+
+<p>4. Dataframe processed via pandas: df.to_json and pd.read_json()
+    
+    <p>n = {"model": "RF", "method": "predict", df.to_json()}
+    json.dump(n, <open("fn", "w")>)
+    
+<p>5. Frontend UI in progress..
